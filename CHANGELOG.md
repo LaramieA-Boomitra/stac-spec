@@ -18,11 +18,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - `item_assets` is not required
 - Better describe the Statistics Object ([#1318](https://github.com/radiantearth/stac-spec/issues/1318))
+- bands as entity in UML model
 - Editorial edits
-
-### Changed
-
-- Updated version numbers for 1.1.0 release.
 
 ## [v1.1.0-beta.1] - 2024-08-08
 
