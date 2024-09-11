@@ -223,7 +223,7 @@ and for WorldView-3 the Multispectral 20° off-nadir value of 1.38.
 | bands      | \[[Band Object](#band-object)] | An array of available bands where each object is a [Band Object](#band-object). |
 
 The `bands` array is used to describe the available bands in a STAC entity or Asset.
-This fields describes the general construct of a band or layer, which doesn't necessarily need to be a spectral band.
+This field describes the general construct of a band or layer, which doesn't necessarily need to be a spectral band.
 By adding fields from extensions you can indicate that a band, for example, is
 
 - a spectral band ([EO extension](https://github.com/stac-extensions/eo)),
@@ -289,6 +289,17 @@ It is STRONGLY RECOMMENDED to provide units in one of the following two formats:
 - [UDUNITS-2](https://ncics.org/portfolio/other-resources/udunits2/): The unit symbol if available, otherwise the singular unit name.
 
 ### Statistics Object
+
+Statistics usually specify the range of values by providing the `minimum` and `maximum` values,
+but can optionally be accompanied by additional statistical values.
+Some additional statistical sizes are listed below,
+but the object can also be extended with other statistical sizes that are not listed below.
+For example, it could list additional coverages such as vegetation cover, land cover, etc.
+If statistics are provided in the Item Properties ([example](../examples/extended-item.json)),
+it is recommended to list the statistical sizes with a JSON Schema in the Collection Summaries
+to better describe the sizes ([example](../examples/collection.json)).
+Please note that some statistical sizes such as cloud cover have explicit fields in other extensions such as the EO extension.
+It is recommended to use the fields standardized in extensions in favor of providing them in the Statistics Object.
 
 | Field Name    | Type    | Description                                                                                                                            |
 | ------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- |
